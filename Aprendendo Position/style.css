@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+@keyframes movimento {
+    0%{
+        opacity: 0%;
+        transform: translate(0px, -50px)
+    }
+    100%{
+        opacity: 100%;
+        transform: translate(0, 0)
+    }
+}
+@keyframes gradient{
+    from{
+        background-position: 0 50%;
+    }
+    to{
+        background-position: 100% 50%;
+    }
+}
+
+*, 
+*::before, 
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+    /* font-family: 'Pushster'; */
+}
+body{
+    background: rgb(27, 27, 27);
+    height: 100vh;
+    background-size: 300% 300%;
+    position: relative;
+    /* background: linear-gradient(to right top, red, blue);
+    animation: gradient 10s ease infinite alternate; */
+}
+h1{
+    color: #efff;
+    animation: movimento 1s ease-out;
+    /* animation-name: movimento;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: backworks;
+    animation-play-state: paused;*/
+}
+.container{
+    position: absolute;
+    width: 90%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    margin: 5%;
+}
+a{
+    text-decoration: none;
+}
+/* ===================== */
+.button{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+    padding: 1rem 0;
+    border-radius: 0.3rem;
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: 300;
+
+    color: #efff;
+    border: 1px solid blueviolet;
+    overflow: hidden;
+    cursor: pointer;
+}
+.button::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    background: blueviolet;
+    z-index: -1;
+    transition: all .5s;
+}
+/* ===================== */
+.item1::before{
+    width: 0;
+
+    top: 0;
+    left: 0;
+}
+.item1:hover::before{
+    width: 100%;
+}
+/* ===================== */
+.item2::before{
+    width: 0;
+
+    top: 0;
+    right: 0;
+}
+.item2:hover::before{
+    width: 100%;
+}
+/* ===================== */
+.item3::before{
+    width: 0%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+.item3:hover::before{
+    width: 100%;
+}
+/* ====================== */
+.item4::before{
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+.item4:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.item5::before{
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 250ms ease-in;
+}
+.item5:hover::before{
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+.subContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+span{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-radius: 10px;
+    margin: 0 1rem;
+    background: linear-gradient(180deg, #282828, #202020);
+    box-shadow: inset -8px 0 8px rgba(0,0,0,0.15),
+    inset 0 -8px 8px rgba(0,0,0,0.25),
+    0 0 0 1.5px rgba(0,0,0,0.75),
+    10px 20px 25px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+span::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    background: linear-gradient(90deg, #232323, #4a4a4a);
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0,0,0,0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+span i{
+    position: absolute;
+    color: white;
+    font-size: 1.5rem;
+    font-style: normal;
+    text-transform: uppercase;
+
+}
