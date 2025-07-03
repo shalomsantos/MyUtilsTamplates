@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clouds{
+    position: absolute;
+    z-index: -1;
+    width: 550px;
+    animation: clouds-animation 35s infinite linear; 
+}
+.fundo-home{
+    width: 50%;
+}
+.mario-dancing{
+}
+.btn {
+    border: 0;
+    background: #00C900;
+    font-size: 1.5rem;
+    padding: 1rem 4rem;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 0px 0px #00a500;
+}
+.btn:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
